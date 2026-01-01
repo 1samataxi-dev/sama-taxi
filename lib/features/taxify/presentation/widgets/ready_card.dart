@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sama_taxi/core/assets/app_assets.dart';
 import 'package:sama_taxi/features/taxify/presentation/screens/vehicle_selection_screen.dart';
 
 class ReadyCard extends StatelessWidget {
@@ -52,7 +53,7 @@ class ReadyCard extends StatelessWidget {
                 ),
                 const Spacer(),
                 Image.asset(
-                  'assets/images/car-logo.png',
+                  AppAssets.carLogo,
                   width: 120,
                   height: 120,
                   fit: BoxFit.contain,

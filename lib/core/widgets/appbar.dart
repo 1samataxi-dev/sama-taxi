@@ -26,13 +26,17 @@ class _CustomAppbarState extends State<CustomAppbar> {
 
   @override
   Widget build(BuildContext context) {
-    return _buildAppBar(
-      context: context,
-      title: widget.title,
-      actions: widget.actions,
-      bottom: widget.bottom,
-      showSearch: widget.showSearch,
-      showBackButton: widget.showBackButton,
+    return PreferredSize(
+    preferredSize:   Size.fromHeight(20),
+    
+      child: _buildAppBar(
+        context: context,
+        title: widget.title,
+        actions: widget.actions,
+        bottom: widget.bottom,
+        showSearch: widget.showSearch,
+        showBackButton: widget.showBackButton,
+      ),
     );
   }}
     
@@ -48,45 +52,68 @@ final bool? showBackButton,}
 ) {
 return 
 
-      PreferredSize(
-    preferredSize:  showSearch==true?  Size.fromHeight(120)
-    :Size.fromHeight(10),
-    child: AppBar(
-      
-             leading: showBackButton==true? IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.of(context).pop(),
-        ):null,
+      AppBar(
         
-        backgroundColor: Colors.white,
-        elevation: 0,
-      
-      
-      title:  Text(
-        title,
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 24,
-          color: Colors.black,
-        ),
-      ),
-      centerTitle: true,
-      actions:actions,
-
-      // ✅ SEARCH BAR IN BOTTOM SECTION
-      bottom: bottom!=null? PreferredSize(
-        preferredSize: const Size.fromHeight(60),
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-          child: Material(
-            elevation: 3,
-            borderRadius: BorderRadius.circular(30),
-            child: bottom
-         
+               leading: showBackButton==true? IconButton(
+            icon: const Icon(Icons.arrow_back, color: Colors.black),
+            onPressed: () => Navigator.of(context).pop(),
+          ):null,
+          
+          backgroundColor: Colors.grey[100],
+          elevation: 0,
+        
+        
+        title:  Text(
+          title,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 24,
+            color: Colors.black,
           ),
         ),
-      ):null,
-    ),
-  );
+        centerTitle: true,
+        actions:actions,
+      
+        // ✅ SEARCH BAR IN BOTTOM SECTION
+        bottom: bottom!=null? PreferredSize(
+          preferredSize: const Size.fromHeight(60),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+            child: Material(
+              elevation: 3,
+              borderRadius: BorderRadius.circular(30),
+              child: bottom
+           
+            ),
+          ),
+        ):null
+
+    
+);
+      
+  //            leading: showBackButton==true? IconButton(
+  //         icon: const Icon(Icons.arrow_back, color: Colors.black),
+  //         onPressed: () => Navigator.of(context).pop(),
+  //       ):null,
+        
+  //       backgroundColor: Colors.grey[100],
+  //       elevation: 0,
+      
+      
+  //     title:  Text(
+  //       title,
+  //       style: TextStyle(
+  //         fontWeight: FontWeight.bold,
+  //         fontSize: 24,
+  //         color: Colors.black,
+  //       ),
+  //     ),
+  //     centerTitle: true,
+  //     actions:actions,
+
+  //     // ✅ SEARCH BAR IN BOTTOM SECTION
+     
+      
+  //   );
 
 }

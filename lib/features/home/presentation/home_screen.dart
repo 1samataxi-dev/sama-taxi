@@ -7,7 +7,7 @@ import 'package:sama_taxi/features/auth/presentation/auth_viewmodel.dart';
 import 'package:sama_taxi/features/home/presentation/utils/home_constants.dart';
 import 'package:sama_taxi/features/home/presentation/widgets/widgets.dart';
 import 'package:sama_taxi/features/lists/presentation/visits_screen.dart';
-import 'package:sama_taxi/features/settings/presentation/settings_screen.dart';
+import 'package:sama_taxi/features/profile/setting/profile_screen.dart';
 import 'package:sama_taxi/features/taxify/presentation/screens/categories_screen.dart';
 import 'package:sama_taxi/features/taxify/presentation/screens/taxify_home_screen.dart';
 
@@ -23,14 +23,18 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
   int _currentIndex = 0;
   late AnimationController _animationController;
 
-  final List<Widget> _screens = const [
+  final List<Widget> _screens = [
     //HotelsScreen(),
     // PackagesScreen(),
     // ToursScreen(),
-    SamaHomeScreen(),
-    CategoriesScreen(),
+    const SamaHomeScreen(),
+    const CategoriesScreen(),
+  //  MapSelectionScreen(onLocationSelected: (LocationModel location) {
+      
+   // }),
     VisitsScreen(),
-    SettingsScreen(),
+    const ProfileScreen(),
+  //  SettingsScreen(),
    
   ];
 

@@ -7,6 +7,7 @@ import 'package:sama_taxi/core/widgets/empty_widget.dart';
 import 'package:sama_taxi/core/widgets/error_widget.dart';
 import 'package:sama_taxi/core/widgets/loading_widget.dart';
 import 'package:sama_taxi/features/lists/presentation/lists_viewmodel.dart';
+import 'package:sama_taxi/features/outstation/presentation/screens/outstation_booking_screen.dart';
 import 'package:sama_taxi/features/taxify/domain/entities/category.dart';
 import 'package:sama_taxi/features/taxify/presentation/widgets/category_item.dart';
 
@@ -31,8 +32,12 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
     final categoriesState = ref.watch(localcategoriesViewModelProvider);
 
     return Scaffold(
-        appBar: CustomAppbar(
-          title: 'Categories',
+        appBar:PreferredSize(
+          preferredSize: const Size.fromHeight(60),
+          child: NormalAppBar(
+            title: "Categories",
+            isBackAction: false,
+          ),
         ),
       body: _CategoriesStateHandler(
         state: categoriesState,

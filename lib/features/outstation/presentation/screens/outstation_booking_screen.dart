@@ -35,11 +35,12 @@ class _OutstationBookingScreenState extends ConsumerState<OutstationBookingScree
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppbar(
-        title: 'Out Station',
-        showBackButton: true,
-    
-
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(60),
+        child: NormalAppBar(
+          title: "Outstation Booking",
+          isBackAction: true,
+        ),
       ),
    
       body: SingleChildScrollView(
@@ -473,6 +474,29 @@ class _OutstationBookingScreenState extends ConsumerState<OutstationBookingScree
             fontWeight: FontWeight.bold,
           ),
         ),
+      ),
+    );
+  }
+}
+
+class NormalAppBar extends StatelessWidget {
+  final String title;
+  final bool? isBackAction;
+  const NormalAppBar({
+    super.key, required this.title,  this.isBackAction=false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return PreferredSize(
+      preferredSize: const Size.fromHeight(20),
+      child: AppBar(
+         centerTitle: true,
+         title: Text(title),
+         leading:(isBackAction!=false)?  IconButton(
+           icon: const Icon(Icons.arrow_back, color: Colors.black),
+           onPressed: () => Navigator.of(context).pop(),
+       ):null,
       ),
     );
   }

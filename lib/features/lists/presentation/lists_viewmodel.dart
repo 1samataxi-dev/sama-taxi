@@ -4,11 +4,13 @@ import 'package:sama_taxi/core/network/enhanced_network_handler.dart';
 import 'package:sama_taxi/core/network/network_result.dart';
 import 'package:sama_taxi/core/providers/local_providers/local_categories.dart';
 import 'package:sama_taxi/core/providers/local_providers/local_offers.dart';
+import 'package:sama_taxi/core/providers/local_providers/local_transactions.dart';
 import 'package:sama_taxi/core/providers/local_providers/ride_option.dart';
 import 'package:sama_taxi/features/offers/domain/model/offers_model.dart';
 import 'package:sama_taxi/features/outstation/domain/models/ride_option.dart';
 import 'package:sama_taxi/features/taxify/domain/entities/category.dart';
 import 'package:sama_taxi/features/visits/domain/models/visit.dart';
+import 'package:sama_taxi/features/wallet/domain/entities/wallet_transaction.dart';
 
 class ListsState<T> {
 
@@ -177,5 +179,20 @@ final localcategoriesOptionViewModelProvider =
     StateNotifierProvider<LocalOptionViewModel, ListsState<RideOption>>(
   (ref) => LocalOptionViewModel(localRideOptions),
 );
+
+// Api Transaction view model provider
+final transactionsViewModelProvider =
+    StateNotifierProvider<ListsViewModel<WalletTransaction>, ListsState<WalletTransaction>>((ref) => ListsViewModel<WalletTransaction>(
+        ref.read(enhancedNetworkHandlerProvider),
+        WalletTransaction.fromJson,
+        ApiEndpoints.offers,
+      )); 
+// Local Transaction view model provider
+final localTransactionsViewModelProvider = StateNotifierProvider<LocalTransactionListsViewModel<WalletTransaction>, 
+ListsState<WalletTransaction>>(
+  (ref) => LocalTransactionListsViewModel<WalletTransaction>(localTransaction),
+); // Local offers view model provider
+
+
   
   

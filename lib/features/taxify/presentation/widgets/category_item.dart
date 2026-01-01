@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sama_taxi/features/outstation/presentation/screens/outstation_booking_screen.dart';
 import 'package:sama_taxi/features/taxify/domain/entities/category.dart';
 import 'package:sama_taxi/features/taxify/presentation/screens/_out_station_category_details.dart';
+import 'package:sama_taxi/features/taxify/presentation/screens/location_search_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   final CategoryModel category;
@@ -25,7 +26,7 @@ class CategoryItem extends StatelessWidget {
           // Navigate to the category details screen
           // Navigator.pushNamed(context, category.routeName);
               Navigator.of(context).push(
-      MaterialPageRoute(builder: (context) => OutstationBookingScreen()));
+      MaterialPageRoute(builder: (context) => LocationSearchScreen()));
         },
         borderRadius: BorderRadius.circular(16),
         child: Container(

@@ -26,7 +26,7 @@ class _OffersScreenState extends ConsumerState<OffersScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final offersState = ref.watch(offersViewModelProvider);
+    final offersState = ref.watch(localOffersViewModelProvider);
 
     return _OffersStateHandler(
       state: offersState,
@@ -36,11 +36,11 @@ class _OffersScreenState extends ConsumerState<OffersScreen> {
   }
 
   void _handleRetry() {
-    ref.read(offersViewModelProvider.notifier).loadItems();
+    ref.read(localOffersViewModelProvider.notifier).loadItems();
   }
 
   Future<void> _handleRefresh() async {
-    await ref.read(offersViewModelProvider.notifier).loadItems();
+    await ref.read(localOffersViewModelProvider.notifier).loadItems();
   }
 }
 

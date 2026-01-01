@@ -35,21 +35,24 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
 
-  provider: ^6.1.2   # (or the latest version)
-  http: 
-
+  provider: ^6.1.2
+  http: ^1.1.0
   equatable: ^2.0.7
-  # from https://pub.dev/packages/dio 
-
+  dio: ^5.4.0  # Removed duplicate entry
   # State Management
   flutter_riverpod: ^2.4.9
+  
+  # Maps
+  # google_maps_flutter: ^2.5.0  # Added version
+  geolocator: ^10.1.0
+  geocoding: ^2.1.1
   
   # Localization
   easy_localization: ^3.0.3
   google_fonts: ^6.2.1
+  intl: ^0.20.0  # Moved from bottom and added version
   
   # Networking
-  dio: ^5.4.0
   connectivity_plus: ^5.0.2
   
   # Storage
@@ -60,12 +63,12 @@ dependencies:
   
   # UI
   flutter_svg: ^2.0.9
+
+
+  flutter_launcher_icons: ^0.14.4  
   
-  # Navigation
   go_router: ^17.0.0
 
-  intl: any
-  flutter_launcher_icons: ^0.14.4  
 
 dev_dependencies:
   flutter_test:

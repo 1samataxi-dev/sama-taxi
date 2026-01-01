@@ -94,9 +94,11 @@ class _CategoriesList extends StatelessWidget {
 
   Widget _buildCategories(List<CategoryModel> categories) {
     return  Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,spacing: 5,
       children: List.generate(
         categories.length,
+        
         (index)=>
         
         CategoryCard(

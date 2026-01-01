@@ -6,8 +6,6 @@ import 'package:sama_taxi/core/navigation/app_router.dart';
 import 'package:sama_taxi/core/providers/theme_provider.dart';
 import 'package:sama_taxi/core/services/logging_service.dart';
 import 'package:sama_taxi/core/theme/app_theme.dart';
-import 'package:sama_taxi/features/auth/presentation/widgets/splash.dart';
-import 'package:sama_taxi/features/home/presentation/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,12 +41,12 @@ class MyApp extends ConsumerWidget {
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
+     // darkTheme: AppTheme.darkTheme,
       themeMode: themeMode,
     //   home: const OnboardingScreen(),
     //   //HomeScreen(),
       
-    //  // initialRoute: '/home',
+     // initialRoute: '/home',
       routerConfig: router,
       debugShowCheckedModeBanner: false,
     );

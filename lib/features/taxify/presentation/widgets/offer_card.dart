@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sama_taxi/core/assets/app_assets.dart';
 
 class OfferCard extends StatelessWidget {
   final String discount;
@@ -69,7 +70,7 @@ class OfferCard extends StatelessWidget {
                   color: Colors.grey[200],
                   shape: BoxShape.circle,
                   image: const DecorationImage(
-                    image: AssetImage('assets/images/car-logo.png'),
+                    image: AssetImage(AppAssets.carLogo),
                     fit: BoxFit.cover,
                   ),
                 ),

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sama_taxi/core/navigation/app_router.dart';
+import 'package:sama_taxi/features/taxify/presentation/screens/ride_in_progress_screen.dart';
+import 'package:sama_taxi/features/taxify/presentation/screens/ride_request_screen.dart';
 
 class VehicleSelectionScreen extends StatefulWidget {
   const VehicleSelectionScreen({super.key});
@@ -140,7 +143,19 @@ class _VehicleSelectionScreenState extends State<VehicleSelectionScreen> {
             padding: const EdgeInsets.all(16),
             child: ElevatedButton(
               onPressed: () {
-                // Handle book ride
+
+           //   context.pushRideInProgress();
+                           Navigator.push(
+  context,
+  MaterialPageRoute(
+    builder: (context) => const RideRequestBottomSheet(
+      // driverName: 'John Doe',
+      // carModel: 'Toyota Camry',
+      // licensePlate: 'ABC123',
+      // eta: '5 minutes',
+    ),
+  ),
+);
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.grey[300],

@@ -15,8 +15,12 @@ class AppStrings {
   static const String visits = 'visits';
   static const String bookings = 'bookings';
   static const String categories = 'categories';
-  static const String myRides = 'my Rides';
+  static const String myRides = 'myRides';
   static const String home = 'home';
+  static const String taxify = 'taxify';
+  static const String searchDestinations = 'searchDestinations';
+  static const String topCategories = 'topCategories';
+  static const String todaysOffers = 'todaysOffers';
   static const String profile = 'profile';
   static const String settings = 'settings';
   static const String language = 'language';

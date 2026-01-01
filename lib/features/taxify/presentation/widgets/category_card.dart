@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sama_taxi/core/navigation/app_router.dart';
 import 'package:sama_taxi/features/outstation/presentation/screens/outstation_booking_screen.dart';
 
 class CategoryCard extends StatelessWidget {
@@ -15,8 +16,9 @@ class CategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-             Navigator.of(context).push(
-      MaterialPageRoute(builder: (context) => OutstationBookingScreen()));
+      context.pushOutstationBooking();
+      //        Navigator.of(context).push(
+      // MaterialPageRoute(builder: (context) => OutstationBookingScreen()));
       },
       child: Container(
         width: 120,

@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:sama_taxi/core/localization/app_strings.dart';
 import 'package:sama_taxi/core/widgets/appbar.dart';
 import 'package:sama_taxi/features/lists/presentation/categories_screen.dart';
 import 'package:sama_taxi/features/offers/presentation/screens/offers_screen.dart';
@@ -13,7 +15,7 @@ class SamaHomeScreen extends StatelessWidget {
     return Scaffold(
      // backgroundColor: Colors.white,
       appBar: CustomAppbar(
-        title: 'Taxify',
+        title: AppStrings.taxify.tr(),
         bottom: _buildSearchBar(),
         showSearch: true,
          actions: [
@@ -66,11 +68,11 @@ class SamaHomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
-            _buildSectionTitle('Top Categories'),
+            _buildSectionTitle(AppStrings.topCategories.tr()),
             const SizedBox(height: 16),
             const TopCategories(),
             const SizedBox(height: 24),
-            _buildSectionTitle('Today\'s Offer'),
+            _buildSectionTitle(AppStrings.todaysOffers.tr()),
           ],
         ),
       ),
@@ -103,14 +105,14 @@ class SamaHomeScreen extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(30),
       ),
-      child: const Row(
+      child:  Row(
         children: [
           Icon(Icons.search, color: Colors.grey),
           SizedBox(width: 8),
           Expanded(
             child: TextField(
               decoration: InputDecoration(
-                hintText: 'Search Destinations',
+                hintText: AppStrings.searchDestinations.tr(),
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.symmetric(vertical: 12),
               ),
@@ -179,7 +181,7 @@ PreferredSizeWidget _buildAppBar() {
             borderRadius: BorderRadius.circular(30),
             child: TextField(
               decoration: InputDecoration(
-                hintText: 'Search destination...',
+                hintText: '${AppStrings.searchDestinations.tr()}...',
                 prefixIcon: const Icon(Icons.search),
                 suffixIcon: const Icon(Icons.calendar_today),
                 filled: true,
